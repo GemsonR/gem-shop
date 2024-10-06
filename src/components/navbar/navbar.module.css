@@ -1,0 +1,86 @@
+.navContainer {
+  max-width: 100vw;
+  display: flex;
+  margin: 0 auto;
+  text-align: center;
+  background: linear-gradient(to left, #ffb200, #ff8225);
+  height: 100px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  justify-content: start;
+  align-items: center;
+  overflow: hidden;
+}
+.textHead {
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  justify-content: center;
+  text-shadow: 0 0 2px;
+  font-weight: 400;
+}
+.icon {
+  animation: icons 4s infinite;
+  
+}
+@keyframes icons {
+  0% {
+    transform: translate(0, 0);
+    color: #343131;
+  }
+  
+  50% {
+    transform: translate(3px, 0);
+    color: #343131;
+  }
+ 
+  100% {
+    transform: translate(-3px, 0);
+    color: #ff8225;
+  }
+}
+
+.logo {
+  margin-right: -6px;
+  color: #fabb28;
+  font-weight: 800;
+  font-size: 2rem;
+  animation: animate 4s infinite;
+}
+@keyframes animate {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(0, 2px);
+  }
+  50% {
+    transform: translate(0, 0);
+  }
+  75% {
+    transform: translate(0, -2px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+.linkTo{
+  justify-self: start;
+  text-decoration: none;
+  color: #343131;
+
+}
+/*  */
+.listContainer{
+  transition: 0.15s;
+}
+
+.listContainer p{
+display: flex;
+}
+.listContainer:hover{
+  box-shadow: 0 4px 0 #ff8225;
+}
