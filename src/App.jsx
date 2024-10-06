@@ -18,9 +18,5 @@ function App() {
   );
 }
 
-// image={details.images}
-// title={details.texts}
-// color={details.colors}
-// price={details.price} />
 
 export default App;
