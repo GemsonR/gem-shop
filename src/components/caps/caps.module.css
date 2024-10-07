@@ -1,0 +1,53 @@
+.container {
+  height: calc(100vh - 100px);
+  width: 100vw;
+  max-width: 80vw;
+  overflow: hidden;
+  margin: 0 auto;
+  display: flex;
+  gap: 2rem;
+}
+.capContainer {
+  max-width: 40vw;
+  margin: auto 0;
+}
+.capContainer img {
+  transition: 0.15s;
+  width: 100%;
+}
+.listContainer {
+  margin: auto 0;
+}
+
+.textContainer {
+  padding: 1rem;
+}
+.textContainer p {
+  margin: 0.4rem;
+  font-size: 1.1rem;
+}
+.title {
+  font-weight: 600;
+}
+.price{
+    color: rgb(255, 174, 0);
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+.imgContainer {
+  margin: 2rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  flex-wrap: wrap;
+}
+.images {
+  max-width: 3rem;
+  cursor: pointer;
+}
+.images img {
+  width: 100%;
+}
+.active {
+  border: 1px solid #000;
+}

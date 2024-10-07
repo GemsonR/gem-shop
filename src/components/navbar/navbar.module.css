@@ -24,19 +24,18 @@
 }
 .icon {
   animation: icons 4s infinite;
-  
 }
 @keyframes icons {
   0% {
     transform: translate(0, 0);
     color: #343131;
   }
-  
+
   50% {
     transform: translate(3px, 0);
     color: #343131;
   }
- 
+
   100% {
     transform: translate(-3px, 0);
     color: #ff8225;
@@ -67,20 +66,41 @@
     transform: translate(0, 0);
   }
 }
-.linkTo{
+.linkTo {
   justify-self: start;
   text-decoration: none;
   color: #343131;
-
 }
 /*  */
-.listContainer{
+.listContainer {
+  display: flex;
+  align-items: center;
+  background-color: #ff8225;
+  margin-left: 2rem;
   transition: 0.15s;
+  padding: 4px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
 }
 
-.listContainer p{
-display: flex;
+.listContainer p {
+  display: flex;
 }
-.listContainer:hover{
-  box-shadow: 0 4px 0 #ff8225;
+.listContainer:hover {
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+}
+
+.expand:hover {
+  cursor: pointer;
+}
+.links {
+  text-decoration: none;
+  font-weight: 500;
+  color: #343131;
+  margin: 0 1rem;
+  border: none;
+  transition: 0.15s;
+}
+.links:hover {
+  border-bottom: 1px solid #000;
 }
