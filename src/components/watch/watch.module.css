@@ -16,13 +16,13 @@
   justify-content: space-evenly;
   padding: 5px;
   overflow: hidden;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   cursor: pointer;
   transition: 0.15s;
 }
 .imgContainer:hover {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   background-color: rgb(234, 240, 240);
 }
 .imgContainer:active {
@@ -49,7 +49,7 @@
   .watchContainer {
     background-color: azure;
     border-radius: 1.5rem;
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
     align-items: center;
     justify-content: center;
     height: fit-content;

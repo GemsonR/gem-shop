@@ -7,6 +7,7 @@
   display: flex;
   gap: 2rem;
 }
+
 .capContainer {
   max-width: 40vw;
   margin: auto 0;
@@ -27,12 +28,35 @@
   font-size: 1.1rem;
 }
 .title {
+  text-align: start;
+  margin: 0;
   font-weight: 600;
 }
-.price{
-    color: rgb(255, 174, 0);
-    font-size: 1.3rem;
-    font-weight: 500;
+.price {
+  color: rgb(255, 174, 0);
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+.btnContainer {
+  width: fit-content;
+  margin: 1rem 0 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.btn {
+  width: fit-content;
+  padding: 8px 10px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  font-weight: bold;
+  background-color: #ffff;
+  color: #555;
+}
+.btn:hover {
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
 }
 .imgContainer {
   margin: 2rem 1rem;
@@ -40,14 +64,40 @@
   justify-content: space-between;
   overflow: hidden;
   flex-wrap: wrap;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+.btnContainer .add {
+  visibility: hidden;
+  font-size: 10px;
+  color: grey;
+}
+.btnContainer .added {
+  visibility: visible;
+  animation: fadeIn 0.5s;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 .images {
   max-width: 3rem;
   cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+.images:active {
+  padding: 0.4rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+.images:hover {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 .images img {
   width: 100%;
-}
-.active {
-  border: 1px solid #000;
 }

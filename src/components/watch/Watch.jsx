@@ -1,9 +1,10 @@
 import styles from "./watch.module.css";
 import style from "./detail.module.css";
 import watches from "./WatchContainer";
-import {useState} from 'react'
+import { useState } from "react";
 
-export default function Watch() {
+export default function Watch({ setItems, setNotif, setAddCart,addCart }) {
+
   const { image, text, color, price } = watches;
 
   const [details, setDetails] = useState({
@@ -23,6 +24,14 @@ export default function Watch() {
     }));
   }
 
+  function handleAdd(images, prices) {
+    setItems((prev) => [...prev, { images, prices }]);
+    setAddCart(true)
+    setNotif((prev) => prev + 1);
+  }
+  setTimeout(() => {
+    setAddCart(false);
+  }, 1000);
   return (
     <div className={style.container}>
       <div className={style.detailContainer}>
@@ -39,6 +48,14 @@ export default function Watch() {
 
         <div className={style.imgContainer}>
           <img src={details.images} />
+        </div>
+        <div className={style.btnContainer}>
+          <p className={`${style.add} ${addCart && style.added}`}>
+            Cart Added.
+          </p>
+          <button onClick={() => handleAdd(details.images, details.price)}>
+            Add to cart
+          </button>
         </div>
       </div>
       <div className={styles.watchContainer}>

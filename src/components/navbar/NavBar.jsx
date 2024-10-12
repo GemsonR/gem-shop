@@ -5,8 +5,9 @@ import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import { useState } from "react";
 
-export default function NavBar() {
+export default function NavBar({ notif }) {
   const [showList, setShowList] = useState(false);
+  const [pop, setPop] = useState(false)
 
   function handleClick() {
     setShowList(!showList);
@@ -14,18 +15,34 @@ export default function NavBar() {
 
   return (
     <nav className={styles.navContainer}>
-      <Link to="/gem-shop/" className={styles.linkTo}>
-        <h1 className={styles.textHead}>
-          <ShoppingCartSharpIcon
-            sx={{ fontSize: 35 }}
-            className={styles.icon}
-          />
-          <span className={styles.logo}>G</span>em
-          <span className={styles.logo}>S</span>hop
-        </h1>
-      </Link>
+      <div className={styles.navs}>
+        <Link to="/gem-shop/" className={`${styles.active} ${styles.linkTo}`}>
+          <h1 className={`${styles.textHead}`}>
+            <span className={styles.logo}>G</span>em
+            <span className={styles.logo}>S</span>hop
+          </h1>
+        </Link>
+        <div className={styles.aboutContainer}>
+          <Link to="/gem-shop/about" className={`${styles.about} ${styles.active}`}>
+          About
+          </Link>
+        </div>
+        <div className={`${styles.cartContainer}`}>
+          <Link
+            to="/gem-shop/cart"
+            onClick={() => setShowList(false)}
+            onMouseOver={()=> setPop(true)}
+            onMouseOut={()=>setPop(false)}
+            className={`${styles.cart} ${styles.active}`}
+          >
+            <ShoppingCartSharpIcon sx={{ fontSize: 35 }} />
+            <span className={styles.notif}>{notif === 0 ? null : notif}</span>
+          </Link>
+          <span className={`${styles.hide} ${pop && styles.show} `}>Show Cart</span>
+        </div>
+      </div>
       <div className={styles.listContainer}>
-        <p>{!showList ? "Shop" : " "}</p>
+        <p>{!showList ? "Shops" : ""}</p>
         {showList && (
           <Link
             to="/gem-shop/watches"
@@ -44,6 +61,7 @@ export default function NavBar() {
             Caps
           </Link>
         )}
+
         {!showList ? (
           <KeyboardArrowRightIcon
             onClick={handleClick}
@@ -52,7 +70,7 @@ export default function NavBar() {
         ) : (
           <KeyboardArrowLeftIcon
             onClick={handleClick}
-            className={styles.expand}
+            className={`${styles.expand} ${styles.exColor}`}
           />
         )}
       </div>
